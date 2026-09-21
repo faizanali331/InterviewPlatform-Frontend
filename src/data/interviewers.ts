@@ -1,0 +1,40 @@
+import { Interviewer } from "../types/interviewer";
+
+export const interviewers: Interviewer[] = [
+  {
+    id: "1",
+    company: "Amazon",
+    designation: "SDE-3",
+    experience: 9,
+    domain: "Java + Spring Boot",
+    skills: ["Java", "Spring Boot", "Microservices", "AWS", "System Design"],
+    rating: 4.9,
+    price: 2499,
+    slots: ["23 Aug · 10:00 AM", "24 Aug · 3:00 PM"],
+    verified: true,
+  },
+  {
+    id: "2",
+    company: "Google",
+    designation: "Senior Software Engineer",
+    experience: 7,
+    domain: "Java + System Design",
+    skills: ["Java", "System Design", "Distributed Systems"],
+    rating: 4.8,
+    price: 2299,
+    slots: ["22 Aug · 6:00 PM"],
+    verified: true,
+  },
+  {
+    id: "3",
+    company: "Microsoft",
+    designation: "Staff Engineer",
+    experience: 11,
+    domain: "Backend + Azure",
+    skills: ["C#", ".NET", "Azure", "Microservices"],
+    rating: 4.7,
+    price: 2799,
+    slots: ["25 Aug · 11:00 AM"],
+    verified: true,
+  },
+];
