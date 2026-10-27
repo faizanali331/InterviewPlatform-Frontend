@@ -1,5 +1,5 @@
 import { apiRequest } from "./apiClient";
-import { AdminStats, AdminPayment } from "../types/admin";
+import { AdminStats, AdminPayment, ContactQuery } from "../types/admin";
 
 export async function getAdminStats(): Promise<AdminStats> {
   return apiRequest("/admin/stats");
@@ -15,4 +15,14 @@ export async function createAdmin(data: {
     method: "POST",
     body: JSON.stringify(data),
   });
+}
+
+
+
+export async function getQueries(): Promise<ContactQuery[]> {
+  return apiRequest("/admin/queries");
+}
+
+export async function resolveQuery(id: number): Promise<ContactQuery> {
+  return apiRequest(`/admin/queries/${id}/resolve`, { method: "POST" });
 }

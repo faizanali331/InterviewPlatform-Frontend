@@ -10,7 +10,7 @@ export default function Header({ title, sub, action }: HeaderProps) {
   return (
     <div className="header">
       <div>
-        <small>INTERVIEWPRO</small>
+        {/* <small>INTERVIEWPRO</small> */}
 
         <h1>{title}</h1>
 

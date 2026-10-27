@@ -12,6 +12,7 @@ import {
   Building2,
   AlertTriangle,
   ShieldCheck,
+  Inbox,
 } from "lucide-react";
 
 import type { Role } from "../../types/auth";
@@ -56,6 +57,7 @@ export default function Sidebar() {
     { path: "/admin/payments", name: "Payments", icon: Wallet },
     { path: "/admin/reports", name: "Reports", icon: BarChart3 },
     { path: "/admin/disputes", name: "Disputes", icon: AlertTriangle },
+    { path: "/admin/queries", name: "Queries", icon: Inbox },
   ];
   const superAdminNav = [
     ...adminNav,

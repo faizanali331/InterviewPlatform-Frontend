@@ -1,7 +1,9 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import LandingPage from "../pages/landing/Landing";
 
 import Layout from "../components/layout/Layout";
 import ProtectedRoute from "./ProtectedRoute";
+import Queries from "../pages/admin/Queries";
 
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
@@ -338,8 +340,28 @@ export default function AppRoutes() {
           </ProtectedRoute>
         }
       />
-      <Route path="/" element={<Navigate to={rootRedirect} replace />} />
+      {/* <Route path="/" element={<Navigate to={rootRedirect} replace />} /> */}
+      <Route
+        path="/"
+        element={
+          isAuthenticated && user ? (
+            <Navigate to={homeRouteForRole(user.role)} replace />
+          ) : (
+            <LandingPage />
+          )
+        }
+      />
       <Route path="*" element={<Navigate to={rootRedirect} replace />} />
+      <Route
+        path="/admin/queries"
+        element={
+          <ProtectedRoute allowedRoles={["admin", "super_admin"]}>
+            <Layout>
+              <Queries />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 }

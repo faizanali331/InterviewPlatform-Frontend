@@ -30,3 +30,14 @@ export interface AdminPayment {
   status: "PENDING" | "SUCCESS" | "FAILED";
   createdAt: string;
 }
+
+export interface ContactQuery {
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  visitorType: string | null;
+  message: string;
+  status: "NEW" | "RESOLVED";
+  createdAt: string;
+}
