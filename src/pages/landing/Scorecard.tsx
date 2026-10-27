@@ -54,6 +54,15 @@ export default function Scorecard() {
           <span>Hiring readiness</span>
           <strong>Almost ready</strong>
         </div>
+
+        <a
+          href="/sample-job-readiness-report.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="lp-report-button"
+        >
+          View Full Sample Report
+        </a>
       </div>
 
       <p className="lp-sample">Sample scorecard. Not a real candidate.</p>

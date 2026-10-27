@@ -175,6 +175,7 @@ import { getDomains } from "../../api/catalogApi";
 import SignupMenu from "./SignupMenu";
 import Scorecard from "./Scorecard";
 import QueryForm from "./QueryForm";
+
 import {
   FALLBACK_DOMAINS,
   FAQ,
@@ -274,6 +275,7 @@ export default function Landing() {
             </div>
 
             <Scorecard />
+            {/* <ReportPreview /> */}
           </div>
         </section>
 
