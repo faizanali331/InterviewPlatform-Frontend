@@ -39,10 +39,20 @@ export default function Recordings() {
           </thead>
           <tbody>
             {confirmed.map((b) => (
+              // <tr key={b.id}>
+              //   <td>{b.interviewerCompanyName}</td>
+              //   <td>{b.domainName}</td>
+              //   <td>{b.slotDate}</td>
+              //   <td>
+              //     <button className="text" disabled title="Not built yet">
+              //       Watch recording
+              //     </button>
+              //   </td>
+              // </tr>
               <tr key={b.id}>
-                <td>{b.interviewerCompanyName}</td>
-                <td>{b.domainName}</td>
-                <td>{b.slotDate}</td>
+                <td>{b.companyName || "N/A"}</td>
+                <td>{b.domainName || "N/A"}</td>
+                <td>{b.scheduleNote || "Not scheduled"}</td>
                 <td>
                   <button className="text" disabled title="Not built yet">
                     Watch recording
