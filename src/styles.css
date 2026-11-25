@@ -545,3 +545,27 @@ tbody tr:last-child td { border-bottom: 0; }
 .lp-report-button:hover {
   background: #676a72;
 }
+/* ===== booking form (landing page and candidate area) ===== */
+.lp-fieldrow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.lp-sent-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.tierpick { border: 0; padding: 0; margin: 0 0 18px; min-width: 0; }
+.tierpick legend { font-weight: 600; font-size: 14px; padding: 0; margin-bottom: 10px; }
+.tieropt { display: block; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; cursor: pointer; background: var(--surface); transition: border-color 0.15s, background 0.15s; }
+.tieropt:hover { border-color: var(--brand-line); }
+.tieropt.selected { border-color: var(--brand); background: var(--brand-soft); }
+.tieropt-head { display: flex; align-items: center; gap: 10px; }
+.tieropt-head input { margin: 0; width: 18px; height: 18px; accent-color: var(--brand); }
+.tieropt-head b { font-family: var(--font-display); font-size: 17px; }
+.tieropt-price { margin-left: auto; font-family: var(--font-display); font-weight: 700; font-size: 17px; }
+.tieropt-desc, .tieropt-companies { display: block; margin: 4px 0 0 28px; font-size: 14px; color: var(--ink-2); }
+.tieropt-companies { color: var(--ink-3); font-size: 13.5px; }
+.tieropt:has(input:focus-visible) { outline: 2px solid var(--brand); outline-offset: 2px; }
+@media (max-width: 700px) { .lp-fieldrow { grid-template-columns: 1fr; gap: 0; } }
+
+/* ===== admin pricing page ===== */
+.pricerow { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line-soft); flex-wrap: wrap; }
+.pricerow:last-child { border-bottom: 0; }
+.pricerow b, .pricerow small { display: block; }
+.pricerow small { color: var(--ink-3); font-size: 13px; margin-top: 2px; }
+.pricerow .controls { display: flex; align-items: center; gap: 10px; }
+.pricerow input { width: 120px; }

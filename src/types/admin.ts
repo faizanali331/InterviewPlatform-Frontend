@@ -21,11 +21,12 @@ export interface AdminStats {
 export interface AdminPayment {
   id: number;
   bookingId: number;
-  candidateEmail: string;
-  candidateName: string;
-  interviewerCompanyName: string;
-  interviewerDesignationTitle: string;
-  domainName: string;
+  candidateName: string | null;
+  candidateEmail: string | null;
+  mobile: string;
+  tier: string;
+  companyName: string | null;
+  domainName: string | null;
   amount: number;
   status: "PENDING" | "SUCCESS" | "FAILED";
   createdAt: string;

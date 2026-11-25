@@ -4,8 +4,8 @@
 export const SHOW_DEMO_NOTICE = true;
 
 export const NAV_LINKS = [
+  { href: "#book-now", label: "Book now" },
   { href: "#why", label: "Why practice" },
-  { href: "#what-you-get", label: "What you get" },
   { href: "#how-it-works", label: "How it works" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
@@ -32,24 +32,20 @@ export const WHY_ROWS: [string, string][] = [
 
 // status: "live" = works today, "soon" = shown with a Coming soon tag.
 // Flip a feature to "live" here when it ships.
-export const FEATURES: {
-  title: string;
-  body: string;
-  status: "live" | "soon";
-}[] = [
+export const FEATURES: { title: string; body: string; status: "live" | "soon" }[] = [
   {
     title: "Interviewers from real companies",
-    body: "Every interviewer is reviewed by our team before they can take a single interview. You see their company, role and experience. You never see their name.",
+    body: "Every interviewer is reviewed by our team before they can take a single interview. You never see their name or contact details.",
     status: "live",
   },
   {
-    title: "Always a level above you",
-    body: "Tell us your current level and we only show interviewers who are more senior. A fresher is never matched with another fresher.",
+    title: "Pick the tier that fits your goal",
+    body: "Choose Tier 1, 2 or 3 depending on the kind of company you're aiming for. Each tier has its own price, shown before you pay.",
     status: "live",
   },
   {
     title: "Book and pay in one place",
-    body: "Pick a time slot from the interviewer's open calendar, pay online, and find the booking in your dashboard.",
+    body: "Tell us a little about yourself, pay online, and we'll contact you to schedule the interview. No account needed.",
     status: "live",
   },
   {
@@ -66,43 +62,51 @@ export const FEATURES: {
 
 export const STEPS = [
   {
-    title: "Create an account",
-    body: "Sign up free and tell us your current level. Freshers are welcome.",
+    title: "Choose a tier",
+    body: "Pick the kind of company you want your interviewer to come from. Every tier shows its price.",
   },
   {
-    title: "Choose an interviewer",
-    body: "Filter by company and domain. Only interviewers senior to you appear.",
+    title: "Tell us about you",
+    body: "Add your mobile number, and if you like your domain, designation, experience and when you're free.",
   },
   {
-    title: "Book a slot and pay",
-    body: "Pick a time from their open slots and pay online.",
+    title: "Pay securely",
+    body: "Pay online with Razorpay. You're charged only for the tier you picked.",
   },
   {
-    title: "Interview, then review",
-    body: "Take the interview, read your scorecard and fix what it points to.",
+    title: "We schedule it",
+    body: "We contact you to agree a time. You take the interview, then review your scorecard.",
   },
 ];
 
 export const FAQ: { q: string; a: string }[] = [
   {
     q: "I'm a fresher. Is this for me?",
-    a: "Yes. Choose the fresher or trainee level when you set up your profile, and you'll be matched with interviewers who are senior to you. You don't need any work experience to book.",
+    a: "Yes. Choose \"Fresher / Trainee\" as your designation and the tier that matches the kind of company you're aiming for. You don't need any work experience, and you don't need an account.",
+  },
+  {
+    q: "Do I need an account to book?",
+    a: "No. You can book straight from this page with just your mobile number. An account is optional, and lets you track your bookings and see when your interview is scheduled.",
+  },
+  {
+    q: "How do I get scheduled?",
+    a: "After you pay, we contact you on the mobile number you gave to agree a time. Telling us when you're available in the booking form helps us do that faster.",
   },
   {
     q: "Will my interviewer know who I am?",
-    a: "Interviewers don't see your email or phone number. They see the domain and the time slot you booked.",
+    a: "Interviewers don't see your email or phone number.",
   },
   {
     q: "Can I see who my interviewer is?",
-    a: "You see their company, role, years of experience and the domains they cover. You don't see their name or contact details, and they don't see yours.",
+    a: "You know the company tier, and the company too if you chose one. You don't see their name or contact details, and they don't see yours.",
   },
   {
     q: "How are interviewers verified?",
-    a: "Interviewers submit their company, role, experience and domains. Our team reviews every profile, and only approved interviewers appear in search.",
+    a: "Interviewers submit their company, role, experience and domains. Our team reviews every profile, and only approved interviewers take interviews.",
   },
   {
     q: "What does it cost?",
-    a: "Signing up is free. Each interview is charged when you book it, and the amount is shown before you pay.",
+    a: "The price depends on the tier you choose, and it's shown on the booking form before you pay. Signing up for an account is free.",
   },
   {
     q: "Is the payment real?",
@@ -116,25 +120,13 @@ export const FAQ: { q: string; a: string }[] = [
 
 // Used until the live domain list loads from the backend (or if the backend is asleep).
 export const FALLBACK_DOMAINS: Record<string, string[]> = {
-  Backend: [
-    "Java",
-    "Spring Boot",
-    "Node.js",
-    "Python",
-    "REST API",
-    "Microservices",
-  ],
+  Backend: ["Java", "Spring Boot", "Node.js", "Python", "REST API", "Microservices"],
   Frontend: ["React", "Angular", "JavaScript", "TypeScript", "HTML/CSS"],
   Cloud: ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "DevOps"],
   Data: ["SQL", "PostgreSQL", "MySQL", "Data Engineering"],
   AI: ["Machine Learning", "Deep Learning", "Generative AI", "LLM"],
   Blockchain: ["Solidity", "Ethereum", "Smart Contracts", "Web3", "DeFi"],
-  General: [
-    "System Design",
-    "Behavioral Interview",
-    "Leadership",
-    "Communication",
-  ],
+  General: ["System Design", "Behavioral Interview", "Leadership", "Communication"],
 };
 
 export const VISITOR_TYPES = [

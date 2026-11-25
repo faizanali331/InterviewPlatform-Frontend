@@ -2,6 +2,16 @@ export interface Company {
   id: number;
   name: string;
   emailDomain: string | null;
+  tier: string; // TIER_1, TIER_2, TIER_3
+}
+
+export interface TierOption {
+  tier: string;
+  label: string;
+  description: string;
+  price: number;
+  sortOrder: number;
+  companies: { id: number; name: string }[];
 }
 
 export interface Domain {

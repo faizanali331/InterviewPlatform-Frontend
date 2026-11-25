@@ -10,6 +10,11 @@ interface RazorpayCheckoutOptions {
     razorpay_payment_id: string;
     razorpay_signature: string;
   }) => void;
+    prefill?: {
+    name?: string;
+    email?: string;
+    contact?: string;
+  };
   modal?: {
     ondismiss?: () => void;
   };

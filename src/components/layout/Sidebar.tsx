@@ -13,6 +13,7 @@ import {
   AlertTriangle,
   ShieldCheck,
   Inbox,
+  IndianRupee,
 } from "lucide-react";
 
 import type { Role } from "../../types/auth";
@@ -33,7 +34,7 @@ export default function Sidebar() {
 
   const candidateNav = [
     { path: "/dashboard", name: "Dashboard", icon: LayoutDashboard },
-    { path: "/interviewers", name: "Find Interviewer", icon: Search },
+    { path: "/book", name: "Book interview", icon: Search },
     { path: "/bookings", name: "My Interviews", icon: CalendarDays },
     { path: "/feedback", name: "Feedback", icon: BarChart3 },
     { path: "/progress", name: "Progress", icon: TrendingUp },
@@ -42,7 +43,7 @@ export default function Sidebar() {
 
   const interviewerNav = [
     { path: "/interviewer", name: "Dashboard", icon: LayoutDashboard },
-    { path: "/availability", name: "Availability", icon: CalendarDays },
+
     { path: "/interviewer/interviews", name: "Interviews", icon: Users },
     { path: "/interviewer/feedback", name: "Feedback", icon: BarChart3 },
     { path: "/earnings", name: "Earnings", icon: Wallet },
@@ -50,11 +51,12 @@ export default function Sidebar() {
 
   const adminNav = [
     { path: "/admin", name: "Dashboard", icon: LayoutDashboard },
-    { path: "/admin/interviewers", name: "Interviewers", icon: Users },
+    { path: "/admin/interviewers", name: "Interviews", icon: Users },
     { path: "/admin/candidates", name: "Candidates", icon: Users },
     { path: "/admin/catalog", name: "Catalog", icon: Building2 },
-    { path: "/admin/interviews", name: "Interviews", icon: CalendarDays },
+    { path: "/admin/interviews", name: "Bookings", icon: CalendarDays },
     { path: "/admin/payments", name: "Payments", icon: Wallet },
+    { path: "/admin/pricing", name: "Pricing", icon: IndianRupee },
     { path: "/admin/reports", name: "Reports", icon: BarChart3 },
     { path: "/admin/disputes", name: "Disputes", icon: AlertTriangle },
     { path: "/admin/queries", name: "Queries", icon: Inbox },

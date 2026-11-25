@@ -3,6 +3,7 @@ import Header from "../../components/common/Header";
 import Badge from "../../components/common/Badge";
 import { getAdminPayments } from "../../api/adminApi";
 import { AdminPayment } from "../../types/admin";
+import { tierLabel } from "../../utils/bookingOptions";
 
 const STATUS_TONE: Record<
   AdminPayment["status"],
@@ -69,7 +70,7 @@ export default function Payments() {
               <tr>
                 <th>Transaction</th>
                 <th>Candidate</th>
-                <th>Interviewer</th>
+                <th>Tier / company</th>
                 <th>Domain</th>
                 <th>Date</th>
                 <th>Amount</th>
@@ -81,13 +82,15 @@ export default function Payments() {
                 <tr key={p.id}>
                   <td>TXN-{p.id}</td>
                   <td>
-                    <b>{p.candidateName}</b>
-                    <small>{p.candidateEmail}</small>
+                    <b>{p.candidateName ?? "No name given"}</b>
+                    <small>{p.mobile}</small>
+                    {p.candidateEmail && <small>{p.candidateEmail}</small>}
                   </td>
                   <td>
-                    {p.interviewerCompanyName} · {p.interviewerDesignationTitle}
+                    {tierLabel(p.tier)}
+                    <small>{p.companyName ?? "Any company"}</small>
                   </td>
-                  <td>{p.domainName}</td>
+                  <td>{p.domainName ?? "Any domain"}</td>
                   <td>{new Date(p.createdAt).toLocaleString()}</td>
                   <td>₹{p.amount.toLocaleString()}</td>
                   <td>

@@ -10,15 +10,14 @@ import Register from "../pages/auth/Register";
 import RegisterInterviewer from "../pages/auth/RegisterInterviewer";
 
 import CandidateDashboard from "../pages/candidate/CandidateDashboard";
-import FindInterviewer from "../pages/candidate/FindInterviewer";
+
 import BookInterview from "../pages/candidate/BookInterview";
-import Payment from "../pages/candidate/Payment";
-import BookingSuccess from "../pages/candidate/BookingSuccess";
+
 import MyInterviews from "../pages/candidate/MyInterviews";
 import Feedback from "../pages/candidate/Feedback";
 
 import InterviewerDashboard from "../pages/interviewer/InterviewerDashboard";
-import Availability from "../pages/interviewer/Availability";
+
 import InterviewerInterviews from "../pages/interviewer/InterviewerInterviews";
 import InterviewerFeedback from "../pages/interviewer/InterviewerFeedback";
 
@@ -28,7 +27,7 @@ import ManageInterviews from "../pages/admin/ManageInterviews";
 import Payments from "../pages/admin/Payments";
 
 import InterviewRoom from "../pages/interview/InterviewRoom";
-
+import Pricing from "../pages/admin/Pricing";
 import { useAuth } from "../context/AuthContext";
 import { homeRouteForRole } from "./roleHome";
 import Settings from "../pages/candidate/Settings";
@@ -66,18 +65,9 @@ export default function AppRoutes() {
           </ProtectedRoute>
         }
       />
+
       <Route
-        path="/interviewers"
-        element={
-          <ProtectedRoute allowedRoles={["candidate"]}>
-            <Layout>
-              <FindInterviewer />
-            </Layout>
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/book/:id"
+        path="/book"
         element={
           <ProtectedRoute allowedRoles={["candidate"]}>
             <Layout>
@@ -86,26 +76,7 @@ export default function AppRoutes() {
           </ProtectedRoute>
         }
       />
-      <Route
-        path="/payment/:id"
-        element={
-          <ProtectedRoute allowedRoles={["candidate"]}>
-            <Layout>
-              <Payment />
-            </Layout>
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/success"
-        element={
-          <ProtectedRoute allowedRoles={["candidate"]}>
-            <Layout>
-              <BookingSuccess />
-            </Layout>
-          </ProtectedRoute>
-        }
-      />
+
       <Route
         path="/bookings"
         element={
@@ -146,16 +117,7 @@ export default function AppRoutes() {
           </ProtectedRoute>
         }
       />
-      <Route
-        path="/availability"
-        element={
-          <ProtectedRoute allowedRoles={["interviewer"]}>
-            <Layout>
-              <Availability />
-            </Layout>
-          </ProtectedRoute>
-        }
-      />
+
       <Route
         path="/interviewer/interviews"
         element={
@@ -183,6 +145,16 @@ export default function AppRoutes() {
           <ProtectedRoute allowedRoles={["admin", "super_admin"]}>
             <Layout>
               <AdminDashboard />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/pricing"
+        element={
+          <ProtectedRoute allowedRoles={["admin", "super_admin"]}>
+            <Layout>
+              <Pricing />
             </Layout>
           </ProtectedRoute>
         }

@@ -1,171 +1,3 @@
-// import {
-//   ArrowRight,
-//   CheckCircle2,
-//   ShieldCheck,
-//   Users,
-//   Video,
-// } from "lucide-react";
-// import { useNavigate } from "react-router-dom";
-// import Logo from "../../components/common/Logo";
-
-// export default function Landing() {
-//   const navigate = useNavigate();
-
-//   return (
-//     <div className="landing">
-//       {/* Header */}
-//       <header className="landing-header">
-//         <Logo />
-
-//         <div className="landing-actions">
-//           <button className="secondary" onClick={() => navigate("/login")}>
-//             Sign in
-//           </button>
-
-//           <button className="primary" onClick={() => navigate("/register")}>
-//             Get started
-//             <ArrowRight size={15} />
-//           </button>
-//         </div>
-//       </header>
-
-//       {/* Hero */}
-//       <main className="landing-main">
-//         <section className="hero">
-//           <div className="hero-content">
-//             <div className="eyebrow">
-//               <ShieldCheck size={15} />
-//               Verified industry professionals
-//             </div>
-
-//             <h1>
-//               Practice interviews
-//               <br />
-//               with people who
-//               <br />
-//               <span>actually hire.</span>
-//             </h1>
-
-//             <p>
-//               InterviewPro connects candidates with verified industry
-//               professionals for realistic, structured mock interviews.
-//             </p>
-
-//             <div className="hero-buttons">
-//               <button
-//                 className="primary large"
-//                 onClick={() => navigate("/register")}
-//               >
-//                 Start practicing
-//                 <ArrowRight size={17} />
-//               </button>
-
-//               <button
-//                 className="secondary large"
-//                 onClick={() => navigate("/login")}
-//               >
-//                 Sign in
-//               </button>
-//             </div>
-
-//             <div className="hero-trust">
-//               <span>
-//                 <CheckCircle2 size={15} />
-//                 Verified interviewers
-//               </span>
-
-//               <span>
-//                 <CheckCircle2 size={15} />
-//                 Real interview experience
-//               </span>
-
-//               <span>
-//                 <CheckCircle2 size={15} />
-//                 Structured feedback
-//               </span>
-//             </div>
-//           </div>
-
-//           {/* Hero visual */}
-//           <div className="hero-card">
-//             <div className="hero-card-header">
-//               <div>
-//                 <span>Next generation interview prep</span>
-//                 <h3>Real people. Real interviews.</h3>
-//               </div>
-
-//               <div className="hero-icon">
-//                 <Video size={22} />
-//               </div>
-//             </div>
-
-//             <div className="hero-stats">
-//               <div>
-//                 <Users size={18} />
-//                 <strong>500+</strong>
-//                 <span>Verified professionals</span>
-//               </div>
-
-//               <div>
-//                 <Video size={18} />
-//                 <strong>2,000+</strong>
-//                 <span>Mock interviews</span>
-//               </div>
-//             </div>
-
-//             <div className="interview-preview">
-//               <div className="preview-dot" />
-
-//               <div>
-//                 <strong>Senior Software Engineer</strong>
-//                 <span>Java · Spring Boot · System Design</span>
-//               </div>
-
-//               <span className="preview-badge">Verified</span>
-//             </div>
-//           </div>
-//         </section>
-
-//         {/* Features */}
-//         <section className="landing-features">
-//           <div>
-//             <ShieldCheck size={20} />
-//             <h3>Verified professionals</h3>
-//             <p>
-//               Interview with professionals whose industry experience has been
-//               verified.
-//             </p>
-//           </div>
-
-//           <div>
-//             <Video size={20} />
-//             <h3>Real interview environment</h3>
-//             <p>Conduct your mock interview directly inside InterviewPro.</p>
-//           </div>
-
-//           <div>
-//             <CheckCircle2 size={20} />
-//             <h3>Actionable feedback</h3>
-//             <p>
-//               Get structured feedback on technical skills, communication, and
-//               problem solving.
-//             </p>
-//           </div>
-//         </section>
-//       </main>
-
-//       {/* Footer */}
-//       <footer className="landing-footer">
-//         <Logo />
-
-//         <span>
-//           © {new Date().getFullYear()} InterviewPro. All rights reserved.
-//         </span>
-//       </footer>
-//     </div>
-//   );
-// }
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -175,6 +7,7 @@ import { getDomains } from "../../api/catalogApi";
 import SignupMenu from "./SignupMenu";
 import Scorecard from "./Scorecard";
 import QueryForm from "./QueryForm";
+import BookNowSection from "./BookNowSection";
 
 import {
   FALLBACK_DOMAINS,
@@ -261,23 +94,25 @@ export default function Landing() {
               </p>
 
               <div className="lp-cta">
-                <Link to="/register" className="primary large">
+                <a href="#book-now" className="primary large">
                   Book a mock interview
-                </Link>
+                </a>
                 <a href="#how-it-works" className="secondary large">
                   See how it works
                 </a>
               </div>
 
               <p className="lp-fine">
-                Free to sign up. You pay only when you book an interview.
+                No account needed. You pay only when you book an interview.
               </p>
             </div>
 
             <Scorecard />
-            {/* <ReportPreview /> */}
           </div>
         </section>
+
+        {/* ---------- book now (works with or without an account) ---------- */}
+        <BookNowSection />
 
         {/* ---------- why practice ---------- */}
         <section className="lp-section alt" id="why">
@@ -319,8 +154,8 @@ export default function Landing() {
             <div className="lp-split-head">
               <h2>What you get when you book.</h2>
               <p className="lp-sub">
-                A real interviewer, matched to your level, and a clear record of
-                how it went.
+                A real interviewer from the kind of company you're aiming for,
+                and a clear record of how it went.
               </p>
             </div>
 
@@ -367,7 +202,7 @@ export default function Landing() {
         {/* ---------- how it works ---------- */}
         <section className="lp-section" id="how-it-works">
           <div className="lp-wrap">
-            <h2>From sign-up to scorecard in four steps.</h2>
+            <h2>From booking to scorecard in four steps.</h2>
 
             <ol className="lp-steps">
               {STEPS.map((step) => (
@@ -385,12 +220,12 @@ export default function Landing() {
           <div className="lp-wrap">
             <div>
               <h2>
-                Work at a company that hires? Interview on your own schedule.
+                Work at a company that hires? Interview candidates for us.
               </h2>
               <p>
                 Apply with your professional details. Once our team has reviewed
-                your profile, you open the time slots you want and candidates
-                book them. Candidates never see your name or contact details.
+                and approved your profile, we'll bring you in to interview
+                candidates. Candidates never see your name or contact details.
               </p>
             </div>
 
@@ -455,8 +290,9 @@ export default function Landing() {
           <Logo variant="dark" />
 
           <nav className="lp-footer-links" aria-label="Footer">
+            <a href="#book-now">Book an interview</a>
             <Link to="/login">Log in</Link>
-            <Link to="/register">Sign up as a candidate</Link>
+            <Link to="/register">Create an account</Link>
             <Link to="/register/interviewer">Apply as an interviewer</Link>
             <a href="#contact">Contact</a>
           </nav>
