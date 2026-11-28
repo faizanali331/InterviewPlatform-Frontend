@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 import Logo from "../../components/common/Logo";
+import BackLink from "../../components/common/BackLink";
 import { loginUser } from "../../api/authApi";
 import { ApiClientError } from "../../api/apiClient";
 import { mapBackendRole } from "../../types/auth";
@@ -42,6 +43,7 @@ export default function Login() {
   return (
     <div className="login">
       <div className="loginbox">
+        <BackLink />
         <Logo variant="dark" />
 
         <h1>Welcome back</h1>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Logo from "../../components/common/Logo";
+import BackLink from "../../components/common/BackLink";
 import { registerUser } from "../../api/authApi";
 import { ApiClientError } from "../../api/apiClient";
 
@@ -46,6 +47,7 @@ export default function Register() {
   return (
     <div className="login">
       <div className="loginbox">
+        <BackLink />
         <Logo variant="dark" />
         <h1>Create your account</h1>
         <p>Practice with verified industry professionals.</p>

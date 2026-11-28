@@ -569,3 +569,6 @@ tbody tr:last-child td { border-bottom: 0; }
 .pricerow small { color: var(--ink-3); font-size: 13px; margin-top: 2px; }
 .pricerow .controls { display: flex; align-items: center; gap: 10px; }
 .pricerow input { width: 120px; }
+
+.backlink { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-2); text-decoration: none; font-size: 14px; font-weight: 500; margin-bottom: 18px; }
+.backlink:hover { color: var(--brand); }
